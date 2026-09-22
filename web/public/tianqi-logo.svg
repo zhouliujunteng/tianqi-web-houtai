@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 140" role="img" aria-label="天启">
+  <g fill="none" stroke="#111312" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M34 105V35l62 70V35"/>
+    <path d="M128 70h318" opacity=".14"/>
+  </g>
+  <text x="128" y="88" fill="#111312" font-family="'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif" font-size="58" font-weight="600" letter-spacing="10">天启</text>
+  <text x="290" y="86" fill="#111312" font-family="Syne, Arial, Helvetica, sans-serif" font-size="30" font-weight="700" letter-spacing="5">TIANQI</text>
+</svg>
