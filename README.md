@@ -4,7 +4,7 @@
 
 ## 技术栈
 
-前端是 `web/` 下的 Vite + React 19 + TypeScript 单页应用，UI 基于 [Launch UI](https://github.com/launch-ui/launch-ui)（Tailwind v4 + shadcn/ui new-york），后端直连 Zion BaaS 的 Runtime GraphQL，没有自建服务端。
+前端是 Vite + React 19 + TypeScript 单页应用，UI 基于 [Launch UI](https://github.com/launch-ui/launch-ui)（Tailwind v4 + shadcn/ui new-york），后端直连 Zion BaaS 的 Runtime GraphQL，没有自建服务端。
 
 ## 角色与流程
 
@@ -23,7 +23,6 @@
 ## 本地开发
 
 ```bash
-cd web
 npm install
 npm run dev
 ```
@@ -37,7 +36,7 @@ cd web
 npm run build
 ```
 
-产物在 `web/dist`，通过 Zion 的静态站点托管发布。
+产物在 `dist`。部署到 Zeabur，构建配置见根目录 `zbpack.json`。
 
 ## 安全边界
 
