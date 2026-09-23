@@ -38,6 +38,19 @@ npm run build
 
 产物在 `dist`。部署到 Zeabur，构建配置见根目录 `zbpack.json`。
 
+## 关于 npm 镜像
+
+`package-lock.json` 里的下载地址统一使用官方源 `registry.npmjs.org`。
+如果你本地配置了 npmmirror 等镜像，执行 `npm install` 后 lockfile 会被改写成镜像地址，
+而构建环境会以 `EALLOWREMOTE` 拒绝安装。提交前请确认：
+
+```bash
+grep -c registry.npmmirror.com package-lock.json   # 应为 0
+```
+
+若已被改写，执行 `sed -i '' 's#registry.npmmirror.com#registry.npmjs.org#g' package-lock.json` 还原。
+镜像与官方源的包内容一致，改写地址不会影响 integrity 校验。
+
 ## 安全边界
 
 授权全部由 Zion 的表、列、行三级权限表达，前端不承担鉴权。关键约束：

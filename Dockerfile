@@ -4,7 +4,12 @@ WORKDIR /app
 
 # 先装依赖，利用镜像层缓存
 COPY package.json package-lock.json ./
-RUN npm ci
+
+# 本地若用 npmmirror 镜像，lockfile 里会写死镜像的绝对下载地址，
+# 构建机上 npm 会以 EALLOWREMOTE 拒绝抓取。这里统一改回官方源再安装。
+# 两个源的包内容一致，integrity 校验值不受影响。
+RUN sed -i 's#registry\.npmmirror\.com#registry.npmjs.org#g' package-lock.json \
+    && npm ci --registry=https://registry.npmjs.org
 
 # 再拷源码构建
 COPY . .
